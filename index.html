@@ -1,15 +1,284 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%234338ca' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-brain'%3E%3Cpath d='M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.97-2.08 2.5 2.5 0 0 1-2.42-3.21C3.4 8.69 6.5 4 12 4.5a2.5 2.5 0 0 1-2.5-2.5Z'/%3E%3Cpath d='M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.97-2.08 2.5 2.5 0 0 0 2.42-3.21C20.6 8.69 17.5 4 12 4.5a2.5 2.5 0 0 0 2.5-2.5Z'/%3E%3C/svg%3E" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Modelo VIP - A Nova Síntese em Psicoterapia</title>
     <meta name="description" content="Vínculo, Imagem e Palavra à Luz da Teoria da Emoção Construída" />
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style type="text/tailwindcss">
+      /* Estilos customizados podem ser adicionados aqui se necessário */
+      .prose {
+        max-width: 65ch;
+      }
+    </style>
   </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+  <body class="bg-gradient-to-br from-blue-50 to-indigo-100">
+
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-6">
+          <div class="flex items-center space-x-3">
+            <i data-lucide="brain" class="h-8 w-8 text-indigo-600"></i>
+            <div>
+              <h1 class="text-2xl font-bold text-gray-900">Modelo VIP</h1>
+              <p class="text-sm text-gray-600">A Nova Síntese em Psicoterapia</p>
+            </div>
+          </div>
+          
+          <nav class="hidden md:flex space-x-8">
+            <a href="#sobre" class="text-gray-700 hover:text-indigo-600 transition-colors">Sobre</a>
+            <a href="#capitulos" class="text-gray-700 hover:text-indigo-600 transition-colors">Capítulos</a>
+            <a href="#apendices" class="text-gray-700 hover:text-indigo-600 transition-colors">Apêndices</a>
+            <a href="#download" class="text-gray-700 hover:text-indigo-600 transition-colors">Download</a>
+          </nav>
+
+          <button id="menu-button" class="md:hidden" aria-label="Abrir menu">
+            <i id="menu-icon-open" data-lucide="menu" class="h-6 w-6"></i>
+            <i id="menu-icon-close" data-lucide="x" class="h-6 w-6 hidden"></i>
+          </button>
+        </div>
+
+        <div id="mobile-menu" class="md:hidden pb-4 hidden">
+          <nav class="flex flex-col space-y-2">
+            <a href="#sobre" class="text-gray-700 hover:text-indigo-600 transition-colors py-2 mobile-nav-link">Sobre</a>
+            <a href="#capitulos" class="text-gray-700 hover:text-indigo-600 transition-colors py-2 mobile-nav-link">Capítulos</a>
+            <a href="#apendices" class="text-gray-700 hover:text-indigo-600 transition-colors py-2 mobile-nav-link">Apêndices</a>
+            <a href="#download" class="text-gray-700 hover:text-indigo-600 transition-colors py-2 mobile-nav-link">Download</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">Modelo VIP</h1>
+          <h2 class="text-2xl md:text-3xl text-indigo-600 mb-8">A Nova Síntese em Psicoterapia</h2>
+          <p class="text-xl text-gray-700 mb-12 leading-relaxed">
+            Vínculo, Imagem e Palavra à Luz da Teoria da Emoção Construída
+          </p>
+          
+          <div class="flex flex-wrap justify-center gap-4 mb-12">
+            <span class="inline-flex items-center text-lg px-4 py-2 bg-gray-100 text-gray-800 rounded-full">
+              <i data-lucide="heart" class="w-5 h-5 mr-2"></i> Vínculo
+            </span>
+            <span class="inline-flex items-center text-lg px-4 py-2 bg-gray-100 text-gray-800 rounded-full">
+              <i data-lucide="brain" class="w-5 h-5 mr-2"></i> Imagem
+            </span>
+            <span class="inline-flex items-center text-lg px-4 py-2 bg-gray-100 text-gray-800 rounded-full">
+              <i data-lucide="message-circle" class="w-5 h-5 mr-2"></i> Palavra
+            </span>
+          </div>
+
+          <button id="download-pdf-hero" class="bg-indigo-600 text-white hover:bg-indigo-700 text-lg px-8 py-4 rounded-lg inline-flex items-center">
+            <i data-lucide="download" class="w-5 h-5 mr-2"></i>
+            Baixar PDF Completo
+          </button>
+        </div>
+      </section>
+
+      <section id="sobre" class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">Sobre o Modelo VIP</h2>
+          <div class="prose prose-lg mx-auto text-gray-700">
+            <p class="text-xl leading-relaxed mb-6">
+              Vivemos um momento extraordinário na história da psicologia e neurociência. Após décadas de fragmentação teórica e disputas entre escolas de pensamento, uma revolução silenciosa está transformando nossa compreensão fundamental sobre a natureza humana.
+            </p>
+            <p class="text-lg leading-relaxed mb-6">
+              Esta revolução não vem de uma nova técnica terapêutica ou de mais uma teoria psicológica, mas de uma descoberta científica que está redefinindo nossa compreensão mais básica sobre o que significa ser humano: as emoções não são reações universais e automáticas, mas construções ativas e individualizadas do cérebro.
+            </p>
+            <p class="text-lg leading-relaxed">
+              É neste contexto revolucionário que nasce o Modelo VIP - uma síntese inovadora que traduz os insights da Teoria da Emoção Construída em uma abordagem prática e integrativa de psicoterapia.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="capitulos" class="py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">Capítulos</h2>
+          <div id="chapters-grid" class="grid md:grid-cols-2 gap-6">
+            </div>
+        </div>
+      </section>
+
+      <section id="apendices" class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">Apêndices - Recursos Práticos</h2>
+          <p class="text-center text-lg text-gray-600 mb-8">
+            Da compreensão à implementação profissional
+          </p>
+          <div id="appendices-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            </div>
+        </div>
+      </section>
+
+      <section id="download" class="py-16 px-4 sm:px-6 lg:px-8 bg-indigo-600">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl font-bold text-white mb-8">
+            Acesse o Livro Completo
+          </h2>
+          <p class="text-xl text-indigo-100 mb-8">
+            Baixe o PDF completo com formatação profissional, numeração de páginas e sumário dinâmico.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button id="download-pdf-footer" class="bg-white text-indigo-600 hover:bg-gray-100 text-lg px-8 py-4 rounded-lg inline-flex items-center">
+              <i data-lucide="download" class="w-5 h-5 mr-2"></i>
+              Download PDF
+            </button>
+            <button id="download-markdown-footer" class="border border-white text-white hover:bg-white hover:text-indigo-600 text-lg px-8 py-4 rounded-lg inline-flex items-center">
+              <i data-lucide="book-open" class="w-5 h-5 mr-2"></i>
+              Versão Markdown
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-8">
+          <div>
+            <div class="flex items-center space-x-3 mb-4">
+              <i data-lucide="brain" class="h-6 w-6 text-indigo-400"></i>
+              <h3 class="text-lg font-semibold">Modelo VIP</h3>
+            </div>
+            <p class="text-gray-400">
+              A Nova Síntese em Psicoterapia baseada na Teoria da Emoção Construída.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Autor</h3>
+            <p class="text-gray-400">
+              Carlos Sérgio Honorato de Oliveira
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Contato</h3>
+            <p class="text-gray-400">
+              Para mais informações sobre o Modelo VIP e formação profissional.
+            </p>
+          </div>
+        </div>
+        <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+          <p class="text-gray-400">
+            © 2024 Modelo VIP. Todos os direitos reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+
+    <script>
+      // Função para renderizar os ícones do Lucide
+      lucide.createIcons();
+
+      // --- Dados da Aplicação ---
+      const chapters = [
+        { id: 1, title: "A Crise das 'Escolas'", subtitle: "Por que precisamos de uma nova síntese" },
+        { id: 2, title: "O Movimento da Psicoterapia Integrativa", subtitle: "Uma breve história e suas vias" },
+        { id: 3, title: "A Teoria da Emoção Construída", subtitle: "O alicerce científico inabalável do Modelo VIP" },
+        { id: 4, title: "Vínculo", subtitle: "Co-regulação e reparentalização" },
+        { id: 5, title: "Imagem", subtitle: "Reconsolidação da memória e simulação mental" },
+        { id: 6, title: "Palavra", subtitle: "Granularidade emocional e construção narrativa" },
+        { id: 7, title: "Avaliação e Conceituação de Caso", subtitle: "Integrando os três pilares na prática clínica" },
+        { id: 8, title: "Protocolos de Tratamento", subtitle: "Integração sinérgica dos três pilares" },
+        { id: 9, title: "A Formação do Terapeuta VIP", subtitle: "Competências, treinamento e desenvolvimento" },
+        { id: 10, title: "Pesquisa e Evidências Empíricas", subtitle: "Validação científica do Modelo VIP" }
+      ];
+
+      const appendices = [
+        { id: 'A', title: "Instrumentos de Avaliação e Conceituação VIP" },
+        { id: 'B', title: "Protocolos de Intervenção Detalhados" },
+        { id: 'C', title: "Recursos e Exercícios para Pacientes" },
+        { id: 'D', title: "Guias de Supervisão e Treinamento" },
+        { id: 'E', title: "Formulários e Documentação Clínica" },
+        { id: 'F', title: "Glossário do Modelo VIP" }
+      ];
+
+      // --- Lógica de Renderização Dinâmica ---
+      const chaptersGrid = document.getElementById('chapters-grid');
+      chapters.forEach(chapter => {
+        const card = `
+          <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow p-6">
+            <h3 class="flex items-center font-bold text-gray-800">
+              <i data-lucide="book-open" class="w-5 h-5 mr-2 text-indigo-600"></i>
+              Capítulo ${chapter.id}
+            </h3>
+            <p class="text-lg font-semibold text-gray-900 mt-2">${chapter.title}</p>
+            <p class="text-gray-600 mt-1">${chapter.subtitle}</p>
+          </div>
+        `;
+        chaptersGrid.innerHTML += card;
+      });
+
+      const appendicesGrid = document.getElementById('appendices-grid');
+      appendices.forEach(appendix => {
+        const card = `
+          <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow p-6">
+            <h3 class="font-bold text-gray-800 text-center">Apêndice ${appendix.id}</h3>
+            <p class="text-gray-600 text-center mt-2">${appendix.title}</p>
+          </div>
+        `;
+        appendicesGrid.innerHTML += card;
+      });
+      lucide.createIcons(); // Re-executar para renderizar ícones criados dinamicamente
+
+      // --- Lógica de Interatividade ---
+      
+      // Menu Mobile
+      const menuButton = document.getElementById('menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIconOpen = document.getElementById('menu-icon-open');
+      const menuIconClose = document.getElementById('menu-icon-close');
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+      const toggleMenu = () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIconOpen.classList.toggle('hidden');
+        menuIconClose.classList.toggle('hidden');
+        const isMenuOpen = !mobileMenu.classList.contains('hidden');
+        menuButton.setAttribute('aria-label', isMenuOpen ? 'Fechar menu' : 'Abrir menu');
+      };
+
+      menuButton.addEventListener('click', toggleMenu);
+      mobileNavLinks.forEach(link => {
+        link.addEventListener('click', toggleMenu);
+      });
+
+      // Funções de Download
+      const handleDownloadPDF = () => {
+        const link = document.createElement('a');
+        link.href = '/LivroModeloVIP_final_numbered_formatted.pdf';
+        link.download = 'Modelo_VIP_Livro_Completo.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        // Para usar este botão, certifique-se de que o arquivo PDF está na pasta "public" do seu projeto.
+        // Se este HTML estiver sozinho, coloque o PDF na mesma pasta que ele e mude o href para "./LivroModeloVIP_final_numbered_formatted.pdf"
+      };
+
+      const handleDownloadMarkdown = () => {
+        const link = document.createElement('a');
+        link.href = '/LivroModeloVIP_final.md';
+        link.download = 'Modelo_VIP_Livro_Completo.md';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        // O mesmo vale para o arquivo Markdown.
+      };
+      
+      document.getElementById('download-pdf-hero').addEventListener('click', handleDownloadPDF);
+      document.getElementById('download-pdf-footer').addEventListener('click', handleDownloadPDF);
+      document.getElementById('download-markdown-footer').addEventListener('click', handleDownloadMarkdown);
+
+    </script>
+
   </body>
 </html>
-
