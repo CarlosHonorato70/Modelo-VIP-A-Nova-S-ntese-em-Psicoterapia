@@ -132,10 +132,6 @@
               <i data-lucide="download" class="w-5 h-5 mr-2"></i>
               Download PDF
             </button>
-            <button id="download-markdown-footer" class="border border-white text-white hover:bg-white hover:text-indigo-600 text-lg px-8 py-4 rounded-lg inline-flex items-center">
-              <i data-lucide="book-open" class="w-5 h-5 mr-2"></i>
-              Versão Markdown
-            </button>
           </div>
         </div>
       </section>
@@ -252,31 +248,24 @@
         link.addEventListener('click', toggleMenu);
       });
 
-      // Funções de Download
+      // Função de Download do PDF
       const handleDownloadPDF = () => {
         const link = document.createElement('a');
-        link.href = '/LivroModeloVIP_final_numbered_formatted.pdf';
-        link.download = 'Modelo_VIP_Livro_Completo.pdf';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        // Para usar este botão, certifique-se de que o arquivo PDF está na pasta "public" do seu projeto.
-        // Se este HTML estiver sozinho, coloque o PDF na mesma pasta que ele e mude o href para "./LivroModeloVIP_final_numbered_formatted.pdf"
-      };
+        
+        // Link de download direto para o arquivo no Google Drive
+        link.href = 'https://drive.google.com/uc?export=download&id=10rxEe0CbPkEiLeIzGY2wU0WzENKyWwg-';
 
-      const handleDownloadMarkdown = () => {
-        const link = document.createElement('a');
-        link.href = '/LivroModeloVIP_final.md';
-        link.download = 'Modelo_VIP_Livro_Completo.md';
+        // Define o nome do arquivo que o usuário verá ao salvar
+        link.download = 'Modelo_VIP_Livro_Completo.pdf';
+        
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
-        // O mesmo vale para o arquivo Markdown.
       };
       
+      // Adiciona o evento de clique aos botões de download
       document.getElementById('download-pdf-hero').addEventListener('click', handleDownloadPDF);
       document.getElementById('download-pdf-footer').addEventListener('click', handleDownloadPDF);
-      document.getElementById('download-markdown-footer').addEventListener('click', handleDownloadMarkdown);
 
     </script>
 
